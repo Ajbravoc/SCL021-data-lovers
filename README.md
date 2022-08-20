@@ -1,11 +1,11 @@
 ## Índice
 
-* [1. Proyecto Pokepedia](#1-Proyecto Pokepedia)
-* [2. Historias de Usuario](#2-Historias de Usuario)
-* [3. Prototipo de baja fidelidad ](#3-Prototipo de baja fidelidad)
-* [4. Prototipo de alta fidelidad ](#4-Prototipo de alta fidelidad)
-* [5. Test Unitario](#5-Test Unitario)
-* [6. Producto final](#6-Producto final)
+* [1. Proyecto Pokepedia]
+* [2. Historias de Usuario]
+* [3. Prototipo de baja fidelidad ]
+* [4. Prototipo de alta fidelidad ]
+* [5. Test Unitario]
+* [6. Producto final]
 
 ***
 
