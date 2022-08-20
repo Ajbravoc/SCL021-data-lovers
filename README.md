@@ -2,8 +2,8 @@
 
 * [1. Proyecto Pokepedia]
 * [2. Historias de Usuario]
-* [3. Prototipo de baja fidelidad ]
-* [4. Prototipo de alta fidelidad ]
+* [3. Prototipo de baja fidelidad]
+* [4. Prototipo de alta fidelidad]
 * [5. Test Unitario]
 * [6. Producto final]
 
