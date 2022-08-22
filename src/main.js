@@ -105,17 +105,19 @@ function createPopUp(dataPokemon) {
 
   //Botones antes del footer//
 let loadMoreBtn = document.querySelector("#load-more");
-let currentItem = 8;
+let currentItem = 18;
 
 loadMoreBtn.onclick = () => {
   let boxes = [...document.querySelectorAll(".pokemon-card")];
-  for (var i = currentItem; i < currentItem + 13; i++) {
+  for (var i = currentItem; i < currentItem + 25; i++) {
     boxes[i].style.display = "inline-block";
 
   //Interacción back//**** preguntar */
     if (i === boxes.length) {
       document.querySelector("#back").style.display = "inline-block";
-      console.log(boxes);
+      console.log(boxes);   
+      return (currentItem += 7); //**preguntar  */ Eso retorna para que muestre los pokemones
+    }
     }
   }
 
@@ -126,5 +128,3 @@ loadMoreBtn.onclick = () => {
   btn.addEventListener("click", function () {
     header.scrollIntoView(true);
   });
-  return (currentItem += 8); //**preguntar  */ Eso retorna para que muestre los pokemones
-};
