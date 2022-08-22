@@ -7,60 +7,70 @@ h1{ font-family: 'Silkscreen', cursive;
   font-size: 3.5em;
 }
 
+
+/*container padre del nav*/
 .container-header{
   background: #ffffff;
-  display: flex;
-  height: 20px;
-  align-items: center;
-  text-decoration: none;
+  height: 35px;
   padding: 36px 0px 42px 0px;
-  font-family: 'Silkscreen', cursive;
 }
 
 .logo {
   font-size: 35px;
-  margin-left: -40px;
-}
-
-/*Menú nav general*/
-.container-header nav{
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 53%;
-  transform: translateX(-50%);
-  z-index: 2;
+  font-family: 'Silkscreen', cursive;
+
 }
 
-/*Menú - nav - botones*/
+/*Container header,nav,logo*/
+.container-header nav{
+  display: flex;
+  position: absolute;
+  height: 117px;
+  width: 840px;
+  left: 51%;
+  transform: translateX(-50%);
+  margin-top: -40px;
+justify-content: space-between;
+  z-index: 2; 
+ 
+}
+
+/*Contenedor Iconos nav bar*/
 .container-header nav ul{
   list-style: none;
   display: flex;
-  justify-content: end;
-  width: 650px;
-  padding:7px 13px ;
-  letter-spacing: 1px;
 }
 
-/*Botones seccionados */
-.container-header a{
-  font-size: 18px;
-  color: #000;
+/* Hijo contenedor Iconos nav bar + menu desplegable*/
+.nav li a{
+  align-items: left;
+  padding: 12px 13px;
+  letter-spacing: 1px;
   text-decoration: none;
-  padding: 8.5px 12px;
+  list-style: none;
+  display:flex;
+  align-items: center;
+  flex-flow: column wrap;
+  color: black;
+  font-family: 'Silkscreen', cursive;
+  font-size: 18px;
+}
+
+/*Iconos*/
+.IconNav{
+  margin: 10px;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-}
-
-.IconNav{
-  padding: 10px;
 }
 
 a:hover{
   background-color: #4343;
 }
 
+/*Contenedor del menu desplegable*/
 .container-header nav ul li ul{
   display: none;
   width: 140px;
@@ -68,6 +78,7 @@ a:hover{
   background: white;
 }
 
+/*Aparezca menu desplegable*/
 .container-header nav ul li:hover > ul{
   display: block;
 }
@@ -77,7 +88,6 @@ a:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   flex-direction: column;
   height: 90vh;
   background-image: linear-gradient(
@@ -91,6 +101,7 @@ a:hover{
   background-position: center;
 }
 
+/*Titulo*/
 #container-background h1{
   color: white;
   padding-bottom: 40px;
@@ -114,7 +125,7 @@ a:hover{
   font-family: 'Silkscreen', cursive;
 }
 
-.btn {
+.btn-glass {
   line-height: 60px;
   width: 55px;
   height: 55px;
@@ -129,14 +140,14 @@ a:hover{
   cursor: pointer;
 }
 
-/*Elements FALTA REVISAR CSS*/
+/*Seccion elements.html*/
 .padre{
   margin:  auto;
   width: 900px;
-  background-color: white;
-  
+  background-color: white; 
 }
 
+/*titulo*/
 .padre h1{
   text-align: center;
   padding: 35px;
@@ -157,7 +168,8 @@ a:hover{
   background-position: center;
 }
 
-.menu{ /*cuadrado*/
+/*Contenedor del toggle*/
+.menu{ 
   display: flex;
   position: relative;
   margin-bottom: 130px;
@@ -170,6 +182,7 @@ a:hover{
   margin-top: 50px;
 }
 
+/*Tipos de pokemon*/
 .menu li{
   position: absolute;
   left:0;
@@ -184,6 +197,7 @@ a:hover{
   transform: rotate(calc(360deg/ 18* var(--i)));
 }
 
+/*Configuracion icono-types*/
 .menu li a{
   display: flex;
   justify-content: center;
@@ -192,22 +206,18 @@ a:hover{
   border-radius: 50%;
   transform: rotate(calc(360deg/-18*var(--i)));
   box-shadow: 0 3px 4px rgba(0,0,0,0.15);
-  color: #111;
   transition: 0.4s;
   width: 75px;
   height: 75px;
 }
 
-.menu li a:hover{
-  color: #ff1252;
-}
-
-.toggle{ /*Botón central que activa y desactiva los elementos*/
+/*Pokebola central que activa y desactiva los elementos*/
+.toggle{ 
 position: absolute;
 display: flex;
 justify-content: center;
 align-items: center;
-z-index: 1; /*Para superponer*/
+z-index: 1; 
 border-radius: 50%;
 cursor: pointer;
 box-shadow: 0 0 4px rgba(0,0,0,0.15);
@@ -218,13 +228,8 @@ transition: 1.25s;
   transform: rotate(315deg);
 }
 
+/* Container de las cartas*/
 #containerElements #container-pokemoncard{
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap:10px;
-  align-items: center;
-  background-color: white;
-  justify-content: center;
-  align-items: stretch;
   margin: 10px;
   padding-left: 60px;
   text-transform: capitalize;
@@ -233,7 +238,6 @@ transition: 1.25s;
 #containerElements #container-pokemoncard .pokemon-card{
   background-color: #fff;
   padding:20px;
-  border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
   display: none;
   width: 105px;
@@ -241,11 +245,11 @@ transition: 1.25s;
   border-radius: 20px;
   text-align: center;
   margin: 30px 20px 20px 30px;
-font-family: 'Noto Sans JP', sans-serif;
-cursor:pointer;
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor:pointer;
      }
 
-/*Aki los llamos? ,los imprimo?*/
+/*Altera la cantidad de pokemones por tipo*/
       #containerElements #container-pokemoncard .pokemon-card:nth-child(1),
       #containerElements #container-pokemoncard .pokemon-card:nth-child(2),
       #containerElements #container-pokemoncard .pokemon-card:nth-child(3),
@@ -253,7 +257,7 @@ cursor:pointer;
       #containerElements #container-pokemoncard .pokemon-card:nth-child(5),
       #containerElements #container-pokemoncard .pokemon-card:nth-child(6),
       #containerElements #container-pokemoncard .pokemon-card:nth-child(7),
-      #containerElements #container-pokemoncard .pokemon-card:nth-child(8)
+      #containerElements #container-pokemoncard .pokemon-card:nth-child(8),
       #containerElements #container-pokemoncard .pokemon-card:nth-child(9),
       #containerElements #container-pokemoncard .pokemon-card:nth-child(10){
 display: inline-block;
@@ -281,29 +285,14 @@ align-items: center;
   font-family: 'Silkscreen', cursive;
 }
 
-/*contenedor de botones*/
-#botones{
-  display: flex;
+/*Contenedor de botones*/
+#btns-pokemon-card{
+ display: flex;
  flex-direction: row;
  justify-content: center;
  font-family: 'Silkscreen', cursive;
  flex-direction: row-reverse;
  align-content: stretch;
-}
-
-#back{
-  width: 80px;
- height: 40px;
- line-height: 40px;
- text-align: center;
-  font-size: 15px;
-  color: #222;
-  border: 1px solid silver;
-  border-radius: 30px;
-  cursor: pointer;
-  padding:5px;
-  font-size: 18px;
-  margin-left: 20px;
 }
 
 #load-more{
@@ -321,33 +310,20 @@ align-items: center;
   margin-bottom: 10px;
 }
 
-/*descripcion*/
-.contenedor-imgs{
-  width: 100%;
-  display: flex;
+#back{
+  width: 80px;
+ height: 40px;
+ line-height: 40px;
+ text-align: center;
+  font-size: 15px;
+  color: #222;
+  border: 1px solid silver;
+  border-radius: 30px;
+  cursor: pointer;
+  padding:5px;
+  font-size: 18px;
+  margin-left: 20px;
 }
-
-.contenedor-imgs{
-  max-width: 40%;
-  height: auto;
-  margin: 20px;
-  padding: 5px;
-  display: inline-block;
-  margin: auto;
-}
-
-.container-footer {
-  background-color: rgb(230, 230, 230);
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 0;
-  padding: 12px;
-  color: rgb(100, 100, 100);
-  font-family: 'Silkscreen', cursive;
-} 
-
 
 #popUp{
 
@@ -374,6 +350,10 @@ font-family: 'Silkscreen', cursive;
  position: relative;
 }
 
+/*contenedor imagen*/
+.infoType{
+  margin-top: 8px;
+}
 
 .info{
 font-size: 20px;
@@ -381,11 +361,12 @@ font-family: 'Noto Sans JP', sans-serif;
 padding: 5px;
 }
 
-
+/*Contenedor nombre y tipo*/
 .info h2,h3{
   font-family: 'Silkscreen', cursive;
   padding: 3px;
 }
+/*Tipo config.específica*/
 h3{
   font-size: 15px;
 }
@@ -399,9 +380,7 @@ h3{
   font-size: 15px;
 }
 
-.infoType{
-  margin-top: 8px;
-}
+
 #btnClosePopUp{
 	position: absolute;
   height: 21px;
@@ -411,13 +390,24 @@ h3{
 	right: 13px;
 	background-color:red;
 	font-size: 15px;
-align-items: center;
+  align-items: center;
   border: 0px transparent;
   cursor: pointer;
-
 }
-
 
 #btnClosePopUp:hover {
   box-shadow: inset 300px 0 0 0 yellow;
 }
+
+.container-footer {
+  background-color: rgb(230, 230, 230);
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0;
+  padding: 12px;
+  color: rgb(100, 100, 100);
+  font-family: 'Silkscreen', cursive;
+} 
+

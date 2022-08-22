@@ -1,5 +1,3 @@
-//import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from "./data/pokemon/pokemon.js";
 
 //Interacción del toggle dentro del menú//
@@ -9,36 +7,34 @@ toggles.onclick = function () {
   menu.classList.toggle("active");
 };
 
-
-
-//Interacción cada elemento de la ruleta a través de un click//
+//Interacción de la clase de cada elemento de la ruleta a través de un click//
 var Btns = document.querySelectorAll(".Btn");
 
 Btns.forEach((link) => {
   link.addEventListener("click", () => {
-    event.preventDefault();
-
+  
 let moveTo = link.getAttribute("moveTo");
     document.getElementById(moveTo).scrollIntoView(true);
   });
 });
 
+//Interacción elemento pokemon toggle con seccion título de cada elemento imprimiendo id//
 window.onload = function () 
 {
-    var test =document.querySelectorAll('.Btn');
-    let tag=document.querySelector("#types");
+    var btnType =document.querySelectorAll('.Btn');
+    let titleType=document.querySelector("#types");
 	
-    for(var i=0;i<test.length;i++)
+    for(var i=0;i<btnType.length;i++)
     {
-        test[i].addEventListener("click", function()
+        btnType[i].addEventListener("click", function()
         {
-            tag.innerText=this.id;
+            titleType.innerText=this.id;
         }); 
     }
 }   
 
 
-//Crea pop Up
+//Crea pop Up//
 document.querySelectorAll(".Btn").forEach((e) => {
     e.addEventListener("click", (event) => {
       const cardType = document.getElementById("container-pokemoncard");
@@ -46,6 +42,7 @@ document.querySelectorAll(".Btn").forEach((e) => {
       console.log(id);
       cardType.textContent = "";
   
+      //Llamar a la data e incluir los elementos "extras" que hayan dentro de un array en la data//
       const dataPokemon = data.pokemon;
       for (let i = 0; i < dataPokemon.length; i++) {
         if (dataPokemon[i].type.includes(id)) {
@@ -68,26 +65,26 @@ document.querySelectorAll(".Btn").forEach((e) => {
           cardType.appendChild(cardPokemon);
   
          
-  
           //Hay que hacer un appendChild por cada información que yo quiera extraer
           cardPokemon.appendChild(img);
           cardPokemon.appendChild(div);
       
-          //boton close pop up
+          //Boton open pop up
           cardPokemon.addEventListener("click", function () {
             console.log("click");
+
+          //Funcionalidad boton open pop up//
             let popUpInfo = createPopUp(dataPokemon[i]);
             document.getElementById("contentPopUp").innerHTML = "";
             document.getElementById("contentPopUp").innerHTML = popUpInfo;
             document.getElementById("popUp").open = true;
-   
-            
           });
         }
       }
     });
   });
-  //Crea informacion de los pop Up
+
+  //Imprime informacion en el pop Up//
 function createPopUp(dataPokemon) {
     return `<div class="infoType">
     <img src="${dataPokemon.img}" alt="Type Pokemon">
@@ -98,33 +95,36 @@ function createPopUp(dataPokemon) {
        <p>${dataPokemon.about}</p>
       </div>`;
   }
+
+  //Funcionalidad boton close pop up//
   document.getElementById("btnClosePopUp").addEventListener("click", closePopUp);
   function closePopUp() {
     console.log("click close");
     document.getElementById("popUp").open = false;
   }
 
-
-
+  //Botones antes del footer//
 let loadMoreBtn = document.querySelector("#load-more");
-let currentItem = 3;
+let currentItem = 8;
 
 loadMoreBtn.onclick = () => {
   let boxes = [...document.querySelectorAll(".pokemon-card")];
-  for (var i = currentItem; i < currentItem + 11; i++) {
+  for (var i = currentItem; i < currentItem + 13; i++) {
     boxes[i].style.display = "inline-block";
-    if (i === boxes.length - 1) {
-      document.querySelector("#back").style.display = "inline-block";
 
+  //Interacción back//**** preguntar */
+    if (i === boxes.length) {
+      document.querySelector("#back").style.display = "inline-block";
       console.log(boxes);
     }
   }
 
+//Retorno de scroll //
   let btn = document.querySelector("#back");
   let header = document.querySelector(".container-header");
 
   btn.addEventListener("click", function () {
     header.scrollIntoView(true);
   });
-  return (currentItem += 3); // Eso retorna para que muestre los pokemones
+  return (currentItem += 8); //**preguntar  */ Eso retorna para que muestre los pokemones
 };

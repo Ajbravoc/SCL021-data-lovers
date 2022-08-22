@@ -14,12 +14,6 @@
     <header class="container-header">
       <nav>
         <p class="logo">Pokepedia</p>
-        <div class="hamburger">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-
         <div id="nav-bar">
           <ul class="nav">
             <li>
@@ -58,20 +52,19 @@
                   style="height: 42px; width: 45px"/>Contact</a>
             </li>
           </ul>
-        
      </div>
     </nav>
     </header>
 
 <section id="principal-container">
   <div class="padre">
-    <h1>Pokemon Elements</h1>
+    <h1>Types</h1>
 
     <div class="menu">
     <div class="toggle"><img src ="Iconos-nav/Pokebola-toggler.png" style="height: 155px; width: 155px;"></div>
     <li style= "--i:0;">
 
-<!-- Agregamos Clase y modificamos Id-->
+<!-- Toggle elements-->
     <a href="#"><img id="electric" class="Btn"  moveto="types" src="ElementsIcons/electric.png"></a></li>
     <li style= "--i:1;">
     <a href="#"> <img id="water" class="Btn"  moveto="types" src="ElementsIcons/water.png"></a></li>
@@ -109,8 +102,9 @@
     <a href="#"><img id="normal" class="Btn" moveto="types" src="ElementsIcons/normal.png"></a></li>
     <li style= "--i:18;"></li>
     </div>
+
 <!--Pop up-->
-<dialog  id="popUp">
+<dialog id="popUp">
   <div id="ventanaModal">
     <header>Tarjeta Pokemon</header>
    <div id="btnCloseCont">  <button id="btnClosePopUp"></button> </div>
@@ -118,18 +112,17 @@
  </div>
 </dialog>
 
-
-
+<!-- Container Pokemon cards-->
 <div id="containerElements">
 <div id="types">
-
 </div>
 
+<!-- Pokemon cards-->
 <div id="container-pokemoncard">
 </div>
 
 
-<div id="botones">
+<div id="btns-pokemon-card">
 <div id="back">Back</div>
 <div id="load-more">Load more</div>
 </div>
