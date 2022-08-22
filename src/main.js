@@ -11,12 +11,6 @@ toggles.onclick = function () {
 
 
 
-
-
-
-
-
-
 //Interacción cada elemento de la ruleta a través de un click//
 var Btns = document.querySelectorAll(".Btn");
 
